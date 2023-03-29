@@ -142,6 +142,7 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     ONE_DAY_TO_SECONDS = 86400
+
     # TO DO: display total travel time
     trip_duration = sum(df['Trip Duration']) / ONE_DAY_TO_SECONDS
     print(f'Total travel time: {trip_duration: .2f} Days')
