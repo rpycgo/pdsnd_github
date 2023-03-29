@@ -65,12 +65,12 @@ def load_data(city, month, day):
     """
     df = pd.read_csv(CITY_DATA.get(city))
     
-    is_next = True if input() == 'yes' else False
+    is_next = True if input('If you want to check original data, enter yes') == 'yes' else False
     i = 0
     while is_next:
         print(df.iloc[i:i+5])
         
-        is_next = True if input() == 'yes' else False
+        is_next = True if input('If you want to check next original data, enter yes') == 'yes' else False
         i += 5
 
     df['Start Time'] = pd.to_datetime(df['Start Time'])
@@ -142,6 +142,7 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     ONE_DAY_TO_SECONDS = 86400
+
     # TO DO: display total travel time
     trip_duration = sum(df['Trip Duration']) / ONE_DAY_TO_SECONDS
     print(f'Total travel time: {trip_duration: .2f} Days')
